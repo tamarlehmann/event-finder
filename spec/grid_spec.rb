@@ -4,12 +4,10 @@ describe Grid do
   subject(:grid) { Grid.new }
 
   describe '::new' do
-    it 'Creates a new grid' do
-      expect(grid).to be_an_instance_of(Grid)
-    end
-
-    it 'Stores a number of cells' do
-      expect(grid.cells).to eq([])
+    it 'Creates a new grid, -10 to +10 (Y axis) and -10 to +10 (X axis)' do
+      grid.create_cells
+      expect(grid.cells.count).to eq(441)
     end
   end
+  
 end
