@@ -14,7 +14,7 @@ class Grid
   def find_closest_events(coords)
     counter = 0
     hash = {}
-    output = []
+    output = ""
 
     @cells_with_events.each do |cell|
       xdifference = (coords.split(",")[0].to_i) - (cell[0].split(",")[0].to_i)
@@ -24,11 +24,11 @@ class Grid
     end
     hash.sort_by{|k,v| k}.to_h.each do |k, v|
         c = @cells[v]
-        output.push("Event #{sprintf '%03d', c.event[:id]} -  #{c.event[:price]}, Distance #{k}")
+        output += "Event #{sprintf '%03d', c.event[:id]} -  #{c.event[:price]}, Distance #{k}" + "\n"
         counter += 1
         break if counter == 5
     end
-    puts output.join("\n")
+    output
   end
 
   private
