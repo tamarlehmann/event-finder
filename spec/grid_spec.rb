@@ -15,8 +15,8 @@ describe Grid do
 
   describe 'Finding Closest Events' do
     it 'Returns the 5 closest events' do
-
-      expect(grid.find_closest_events("2, 5")).to eq("Event 011 -  $44.30, Distance 1\nEvent 028 -  $72.65, Distance 2\nEvent 046 -  $31.65, Distance 4\nEvent 073 -  $35.30, Distance 5\nEvent 003 -  $73.87, Distance 6\n")
+      body = "Closest Events to (2, 5)\nEvent 011 -  $44.30, Distance 1\nEvent 028 -  $72.65, Distance 2\nEvent 046 -  $31.65, Distance 4\nEvent 073 -  $35.30, Distance 5\nEvent 003 -  $73.87, Distance 6\n"
+      expect{grid.find_closest_events("2, 5")}.to output{body}.to_stdout
     end
   end
 

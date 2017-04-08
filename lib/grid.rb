@@ -11,10 +11,16 @@ class Grid
     find_cells_with_events
   end
 
+  def find_events
+    puts "Please Input Coordinates e.g. 2, 3"
+    response = gets.chomp
+    find_closest_events(response)
+  end
+
   def find_closest_events(coords)
     counter = 0
     hash = {}
-    output = ""
+    output = "Closest Events to (#{coords})\n"
 
     @cells_with_events.each do |cell|
       xdifference = (coords.split(",")[0].to_i) - (cell[0].split(",")[0].to_i)
@@ -28,7 +34,7 @@ class Grid
         counter += 1
         break if counter == 5
     end
-    output
+    puts output
   end
 
   private
