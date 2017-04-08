@@ -1,3 +1,6 @@
+require_relative 'cell'
+require 'json'
+
 class Grid
   attr_accessor :cells, :cells_with_events
 
@@ -6,6 +9,26 @@ class Grid
     @cells_with_events = []
     create_cells
     find_cells_with_events
+  end
+
+  def find_closest_events(coords)
+    counter = 0
+    hash = {}
+    output = []
+
+    @cells_with_events.each do |cell|
+      xdifference = (coords.split(",")[0].to_i) - (cell[0].split(",")[0].to_i)
+      ydifference = (coords.split(",")[1].to_i) - (cell[0].split(",")[1].to_i)
+      distance = xdifference.abs + ydifference.abs
+      hash.store(distance, cell[0])
+    end
+    hash.sort_by{|k,v| k}.to_h.each do |k, v|
+        c = @cells[v]
+        output.push("Event #{sprintf '%03d', c.event[:id]} -  #{c.event[:price]}, Distance #{k}")
+        counter += 1
+        break if counter == 5
+    end
+    puts output.join("\n")
   end
 
   private
