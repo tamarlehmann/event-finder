@@ -7,6 +7,8 @@ class Cell
     find_event
   end
 
+  private
+
   def find_event
     events = []
     json = File.read('event_data.json')
