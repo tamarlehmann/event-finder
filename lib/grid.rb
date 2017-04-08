@@ -11,10 +11,27 @@ class Grid
     find_cells_with_events
   end
 
-  def find_events
+  def find_events(coords = gets.chomp)
     puts "Please Input Coordinates e.g. 2, 3"
-    response = gets.chomp
+    response = coords
     find_closest_events(response)
+  end
+
+  private
+
+  def create_cells
+    (-10..10).each do |x|
+      (-10..10).each do |y|
+        coords="#{x}, #{y}"
+        @cells[coords]=(Cell.new(x,y))
+      end
+    end
+  end
+
+  def find_cells_with_events
+    @cells.each do |c|
+      @cells_with_events.push(c) if c[1].event != nil
+    end
   end
 
   def find_closest_events(coords)
@@ -36,22 +53,4 @@ class Grid
     end
     puts output
   end
-
-  private
-
-  def create_cells
-    (-10..10).each do |x|
-      (-10..10).each do |y|
-        coords="#{x}, #{y}"
-        @cells[coords]=(Cell.new(x,y))
-      end
-    end
-  end
-
-  def find_cells_with_events
-    @cells.each do |c|
-      @cells_with_events.push(c) if c[1].event != nil
-    end
-  end
-
 end
