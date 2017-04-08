@@ -11,9 +11,10 @@ class Grid
     find_cells_with_events
   end
 
-  def find_events(coords = gets.chomp)
+  def find_events(coords = nil)
     puts "Please Input Coordinates e.g. 2, 3"
     response = coords
+    response = gets.chomp if response == nil
     find_closest_events(response)
   end
 
