@@ -29,12 +29,13 @@ An app that accepts a user location as a pair of co-ordinates, and returns a lis
 
 ## Assumptions
 - I used [Mockaroo](https://www.mockaroo.com/) to generate random seed data. I generated 100 rows of JSON data. The structure is as follows:
- * ID, number
- * No_tickets, number between 0 and 100
- * Price, monetary value in $ between 0 and 100
- * x_coord, number between -10 and 10
- * y_coord, number between -10 and 10
-Ruby has JSON built in, just `require JSON` needed at the top of the file.
+   * ID, number
+   * No_tickets, number between 0 and 100
+   * Price, monetary value in $ between 0 and 100
+   * x_coord, number between -10 and 10
+   * y_coord, number between -10 and 10
+
+- Ruby has JSON built in, just `require JSON` needed at the top of the file.
 
 - Only accessible method that can be called is find_events, everything else is unknown to the application.
 
