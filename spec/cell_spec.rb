@@ -23,5 +23,4 @@ describe Cell do
       expect(cell2.event["id"]).not_to eq(101)
     end
   end
-
 end

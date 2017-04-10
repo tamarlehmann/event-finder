@@ -16,7 +16,7 @@ class Cell
     events = []
     json = File.read('event_data.json')
     events_list = JSON.parse(json)
-    for i in 0..(events_list.length)
+    for i in 1..(events_list.length)
         events.push(Event.new(i))
         i += 1
     end
