@@ -30,8 +30,8 @@ class Grid
   end
 
   def find_cells_with_events
-    @cells.each do |c|
-      @cells_with_events.push(c) if c[1].event != nil
+    @cells.each do |cell|
+      @cells_with_events.push(cell) if cell[1].event != nil
     end
   end
 
