@@ -1,4 +1,4 @@
-# Event Finder
+# Event Finder [![Build Status](https://travis-ci.org/tamarlehmann/event-finder.svg?branch=master)](https://travis-ci.org/tamarlehmann/event-finder)[![Coverage Status](https://coveralls.io/repos/github/tamarlehmann/event-finder/badge.svg?branch=master)](https://coveralls.io/github/tamarlehmann/event-finder?branch=master)
 
 An app that accepts a user location as a pair of co-ordinates, and returns a list of the five closest events, along with the cheapest ticket price for each event.
 
